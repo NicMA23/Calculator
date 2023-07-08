@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&display=swap" rel="stylesheet">
@@ -13,77 +14,112 @@
 
 <body>
     <div class="container">
-        <div class="screen">
-            01010101110000
-        </div>
-        <div class="row">
-            <button>
-                %
-            </button>
-            <button>
-                AC
-            </button>
-            <button>
-                &div;
-            </button>
-            <button>
-                &leftarrow;
-            </button>
-        </div>
-        <div class="row">
-            <button>
-                7
-            </button>
-            <button>
-                8
-            </button>
-            <button>
-                9
-            </button>
-            <button>
-                +
-            </button>
-        </div>
-        <div class="row">
-            <button>
-                4
-            </button>
-            <button>
-                5
-            </button>
-            <button>
-                6
-            </button>
-            <button>
-                -
-            </button>
-        </div>
-        <div class="row">
-            <button>
-                1
-            </button>
-            <button>
-                2
-            </button>
-            <button>
-                3
-            </button>
-            <button>
-                &times;
-            </button>
-        </div>
-        <div class="row">
-            <button>
-                0
-            </button>
-            <button id="plus_less">
-                +/-
-            </button>
-            <button id="equal">
-                =
-            </button>
+        <div class="calc-buttons">
+            <div class="disable-selection">
+                <div class="screen">
+                    0
+                </div>
+                <div class="row">
+                    <button class="button">
+                        %
+                    </button>
+                    <button class="button">
+                        AC
+                    </button>
+                    <button class="button">
+                        &div;
+                    </button>
+                    <button class="button">
+                        &leftarrow;
+                    </button>
+                </div>
+                <div class="row">
+                    <button class="button">
+                        7
+                    </button>
+                    <button class="button">
+                        8
+                    </button>
+                    <button class="button">
+                        9
+                    </button>
+                    <button class="button">
+                        +
+                    </button>
+                </div>
+                <div class="row">
+                    <button class="button">
+                        4
+                    </button>
+                    <button class="button">
+                        5
+                    </button>
+                    <button class="button">
+                        6
+                    </button>
+                    <button class="button">
+                        -
+                    </button>
+                </div>
+                <div class="row">
+                    <button class="button">
+                        1
+                    </button>
+                    <button class="button">
+                        2
+                    </button>
+                    <button class="button">
+                        3
+                    </button>
+                    <button class="button">
+                        &times;
+                    </button>
+                </div>
+                <div class="row">
+                    <button class="button">
+                        0
+                    </button>
+                    <button class="button" id="plus_less">
+                        +/-
+                    </button>
+                    <button class="button" id="equal">
+                        =
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
+    <div class="toggle">
+    </div>
+    <!--JavaScript-->
+    <script src="main.js"></script>
+    <script>
+        const body = document.querySelector('body');
+        const toggle = document.querySelector('.toggle');
+        const equalButton = document.getElementById('equal');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            let getMode = localStorage.getItem('mode');
+            if (getMode === 'dark') {
+                body.classList.add('dark');
+                toggle.classList.add('activate');
+            } else {
+                body.classList.remove('dark');
+                toggle.classList.remove('activate');
+            }
+        });
+
+        toggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            toggle.classList.toggle('activate');
+            if (body.classList.contains('dark')) {
+                localStorage.setItem('mode', 'dark');
+            } else {
+                localStorage.setItem('mode', 'light');
+            }
+        });
+    </script>
+
 </body>
 
 </html>

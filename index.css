@@ -20,6 +20,11 @@ body {
     justify-content: center;
     font-family: 'Lora', serif;
     font-display: swap;
+    transition: all 0.3s ease-in-out;
+}
+
+body.dark {
+    background: linear-gradient(320deg, rgb(25, 26, 23), rgb(19, 18, 17), rgb(15, 15, 12));
 }
 
 .container {
@@ -68,8 +73,25 @@ body {
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.75);
     box-shadow: 0 4px 30px rgba(7, 4, 4, 0.568);
-    color: #232323;
+    color: #e4d6d6;
     background-color: rgba(149, 11, 177, 0.87);
+}
+
+.container button:last-child:hover {
+    background-color: inherit;
+    color: inherit;
+}
+
+.container button:hover {
+    background-color: inherit;
+}
+
+.container button:active {
+    background-color: #ffef78;
+}
+
+.container button:last-child:active {
+    background-color: #ffef78;
 }
 
 #equal {
@@ -79,4 +101,47 @@ body {
 
 #plus_less {
     margin-right: 3%;
+}
+
+.toggle {
+    position: relative;
+    justify-content: right;
+    height: 35px;
+    width: 80px;
+    margin-left: 5%;
+    margin-bottom: 500px;
+    border-radius: 100px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.toggle::before {
+    content: '';
+    position: absolute;
+    background-color: #260db4;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    top: 7.5%;
+    left: 1px;
+    transform: translate(10%);
+    transition: all 0.3s ease-in-out;
+}
+
+.toggle.activate::before {
+    background-color: #0c0c0c;
+    left: calc(100% - 30px - 7.5px);
+}
+
+.disable-selection {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer / Edge */
+    user-select: none;
 }
