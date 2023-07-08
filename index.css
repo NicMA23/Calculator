@@ -1,0 +1,82 @@
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    align-items: center;
+    background: linear-gradient(320deg, rgb(199, 211, 63), rgb(211, 130, 63), rgb(184, 211, 63));
+    display: flex;
+    height: inherit;
+    justify-content: center;
+    font-family: 'Lora', serif;
+    font-display: swap;
+}
+
+.container {
+    background-color: rgb(202, 193, 193);
+    border: 2px rgba(rgba(7, 4, 4, 0.568)) solid;
+    border-radius: 12.5px;
+    height: 540px;
+    flex-basis: 420px;
+    box-shadow: 3px 4px;
+    color: #232323;
+    padding: 20px 30px;
+}
+
+.screen {
+    backdrop-filter: blur(5.5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 4px 30px rgba(7, 4, 4, 0.568);
+    color: #232323;
+    font-size: 35px;
+    overflow: auto;
+    padding: 20px;
+    text-align: right;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin: 5% 0;
+}
+
+.container button {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 1px 4.75px;
+    border-radius: 6px;
+    flex-basis: 20%;
+    font-family: inherit;
+    font-size: 24PX;
+    height: 65px;
+}
+
+.container button:last-child {
+    backdrop-filter: blur(5.5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 4px 30px rgba(7, 4, 4, 0.568);
+    color: #232323;
+    background-color: rgba(149, 11, 177, 0.87);
+}
+
+#equal {
+    flex-basis: 40%;
+    margin-right: 3%
+}
+
+#plus_less {
+    margin-right: 3%;
+}
