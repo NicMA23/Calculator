@@ -5,6 +5,11 @@ let previousOperator = null;
 const screen = document.querySelector('.screen');
 
 function buttonClick(value) {
+    if (event.target.classList.contains('screen')) {
+        // Clicked on the screen, do nothing
+        return;
+    }
+
     if (isNaN(value)) {
         handleSymbol(value);
     } else {
@@ -13,6 +18,7 @@ function buttonClick(value) {
     buffer = buffer.slice(0, 16); // Limit to 16 digits
     screen.innerText = buffer;
 }
+
 
 
 
